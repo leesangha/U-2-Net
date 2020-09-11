@@ -10,6 +10,7 @@ RUN apt-get update && apt-get install -y \
 
 ENV APP_HOME /app
 WORKDIR ${APP_HOME}
+RUN mkdir saved_models
 
 COPY saved_models /app/saved_models
 
