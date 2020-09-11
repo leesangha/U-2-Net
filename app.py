@@ -27,7 +27,7 @@ BATCH_SIZE = 1
 CHECK_INTERVAL = 0.1
 ##################################################################
 # pre-train
-#net = U_2net.getNet()
+net = U_2net.getNet()
 # run
 
 
@@ -40,13 +40,13 @@ def run(input_file, file_type, f_path):
             # Original Image Save
             input_file.save(save_path)
             # Run model
-            #image_list = U_2net.getData(f_path)
-            #loader = U_2net.getLoader(image_list)
-            #U_2net.run(image_list, loader, net, f_path)
+            image_list = U_2net.getData(f_path)
+            loader = U_2net.getLoader(image_list)
+            U_2net.run(image_list, loader, net, f_path)
             # 디렉토리에 jpg,png 또는 png하나 생김
 
             # return result_path
-            result_path = f_path + '/' + f_name + '.jpg'
+            result_path = f_path + '/' + f_name + '.png'
 
             return result_path
 
