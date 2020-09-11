@@ -108,7 +108,6 @@ def predict():
 
         input_file = request.files["source"]
         file_type = request.form["file_type"]
-
         if file_type == "image":
             if input_file.content_type not in ["image/jpeg", "image/jpg", "image/png"]:
                 return jsonify({"message": "Only support jpeg, jpg or png"}), 400
