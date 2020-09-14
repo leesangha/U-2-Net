@@ -80,3 +80,7 @@ pages = {107404},
 year = {2020}
 }
 ```
+
+## License
+
+Apache 2.0
