@@ -50,7 +50,7 @@ git clone https://github.com/NathanUA/U-2-Net.git
 2. Download the pre-trained model [u2net.pth (176.3 MB)](https://drive.google.com/file/d/1ao1ovG1Qtx4b7EoskHXmi2E9rp5CHLcZ/view?usp=sharing) or [u2netp.pth (4.7 MB)](https://drive.google.com/file/d/1rbSTGKAE-MTxBYHd-51l2hMOQPT_7EPy/view?usp=sharing) and put it into the dirctory './saved_models/u2net/' and './saved_models/u2netp/'
 
 3. Cd to the directory 'U-2-Net', run the train or inference process by command: `python u2net_train.py`
-   or `python u2net_test.py` respectively. The 'model_name' in both files can be changed to 'u2net' or 'u2netp' for using different models.
+   or `python exec.py` respectively. The 'model_name' in both files can be changed to 'u2net' or 'u2netp' for using different models.
 
 We also provide the predicted saliency maps ([u2net results](https://drive.google.com/file/d/1mZFWlS4WygWh1eVI8vK2Ad9LrPq4Hp5v/view?usp=sharing),[u2netp results](https://drive.google.com/file/d/1j2pU7vyhOO30C2S_FJuRdmAmMt3-xmjD/view?usp=sharing)) for datasets SOD, ECSSD, DUT-OMRON, PASCAL-S, HKU-IS and DUTS-TE.
 
