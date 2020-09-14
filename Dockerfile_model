@@ -1,17 +1,5 @@
-FROM nvidia/cuda:10.1-cudnn7-runtime-ubuntu18.04
+FROM alpine:3.7
 
-RUN apt-get update && apt-get install -y \
-    python3.7 \
-    python3-pip \
-    libglib2.0-0 \
-    libsm6 \
-    libxext6 \
-    libxrender-dev
-
-ENV APP_HOME /app
-WORKDIR ${APP_HOME}
-RUN mkdir saved_models
+WORKDIR /app/saved_models
 
 COPY saved_models /app/saved_models
-
-CMD "bash"
