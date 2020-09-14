@@ -18,7 +18,7 @@ RUN pip3 install --upgrade pip setuptools
 RUN pip3 install -r requirements.txt
 
 RUN mkdir /app/saved_models
-COPY --from=build /app/saved_models/* /app/saved_models
+COPY --from=build /app/saved_models/ /app/saved_models
 
 COPY . /app
 
