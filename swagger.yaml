@@ -9,3 +9,32 @@ info:
   license:
     name: "Apache 2.0"
     url: https://github.com/leesangha/U-2-Net#license
+
+servers:
+  - url: https://master-u-2-net-leesangha.endpoint.ainize.ai/
+
+paths:
+  /predict:
+    post:
+      requestBody:
+        required: true
+        description: "Convert images into black background and main white area"
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file_type:
+     responses:
+        '200':
+            description: success
+            content:
+                image/jpg:
+                    chema:
+                        type: string
+                        format: binary
+        '400':
+            description: Bad Request
+
+        '500':
+            description: Server side error
