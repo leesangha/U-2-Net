@@ -1,6 +1,6 @@
 # U^2-Net (U square net)
 
-[![Run on Ainize](https://ainize.ai/images/run_on_ainize_button.svg)](https://ainize.web.app/redirect?git_repo=https://github.com/leesangha/U-2-Net-test)
+[![Run on Ainize](https://ainize.ai/images/run_on_ainize_button.svg)](https://ainize.web.app/redirect?git_repo=https://github.com/leesangha/U-2-Net)
 
 The code for our newly accepted paper **U^2-Net (U square net)** in Pattern Recognition 2020:
 
