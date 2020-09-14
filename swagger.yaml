@@ -1,0 +1,11 @@
+openapi: 3.0.1
+
+info:
+  title: U-2-Net
+  description: "Going Deeper with Nested U-Structure for Salient Object Detection"
+  contact:
+    name: Ainizer - Sangha Lee
+  version: "0.1"
+  license:
+    name: "Apache 2.0"
+    url: https://github.com/leesangha/U-2-Net#license
