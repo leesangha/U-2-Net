@@ -56,10 +56,7 @@
       <hr class="solid" />
 
       <h2>Let’s Try!</h2>
-      <div id="selectType" style="margin-top: 5px; margin-bottom: 5px;">
-        <label for="file_type"> Type : </label>
-        <label><input type="radio" name="file_type" value="image" checked /> Image </label>
-      </div>
+
       <div id="sampleBox" style="margin-bottom: 5px">
         <p style="display: inline">Sample :</p>
         <a download="sample_image.jpg" href="/static/sample_files/sample_image1.jpg" target="blank">Sample Image</a>
@@ -203,9 +200,6 @@
 
           const formData = new FormData();
           try {
-            if (document.querySelector('input[name=file_type]:checked') == null) {
-              throw Error("Please Choose file type");
-            }
             if (document.getElementById("source").files[0] == undefined) {
               throw Error("Please upload file");
             } else if (
@@ -221,7 +215,7 @@
             return;
           }
 
-          const file_type = document.querySelector('input[name=file_type]:checked').value
+          const file_type = "image";
           const source = document.getElementById("source").files[0];
 
           formData.append("source", source);
@@ -246,9 +240,6 @@
               if (file_type === "image") {
                 document.getElementById("image").src = responseURL;
                 document.getElementById("image").style.display = "inline";
-              } else {
-                document.getElementById("video").src = responseURL;
-                document.getElementById("video").style.display = "inline";
               }
               document.getElementById("result").style.display = "inline";
               document
