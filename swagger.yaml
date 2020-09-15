@@ -1,7 +1,7 @@
 openapi: 3.0.1
 
 info:
-  title: U-2-Net
+  title: ainize-catoonize-swagger
   description: "Going Deeper with Nested U-Structure for Salient Object Detection"
   contact:
     name: Ainizer - Sangha Lee
@@ -25,25 +25,25 @@ paths:
               type: object
               properties:
                 file_type:
-                    type: string
-                    enum: [image]
-                    source:
-                        type: string
-                        format: binary
+                  type: string
+                  enum: [image]
+                source:
+                  type: string
+                  format: binary
             encoding:
-                files:
-                    contestType: image/* 
+              files:
+                contentType: image/*
 
-     responses:
-        '200':
-            description: success
-            content:
-                image/jpg:
-                    chema:
-                        type: string
-                        format: binary
-        '400':
-            description: Bad Request
+      responses:
+        "200":
+          description: success
+          content:
+            image/jpg:
+              schema:
+                type: string
+                format: binary
+        "400":
+          description: Bad Request
 
-        '500':
-            description: Server side error
+        "500":
+          description: Server side error
