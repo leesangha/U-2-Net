@@ -25,6 +25,15 @@ paths:
               type: object
               properties:
                 file_type:
+                    type: string
+                    enum: [image]
+                    source:
+                        type: string
+                        format: binary
+            encoding:
+                files:
+                    contestType: image/* 
+
      responses:
         '200':
             description: success
