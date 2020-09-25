@@ -109,15 +109,21 @@
           <p id="errorbox"></p>
           <div id="result">
             <!-- Nested grid -->
-            <div class="row">
+            <div class="row" style="display:flex">
+              <div id="space"  style="width: 50%; height:50%;">
+              <img id="example_original" 
+                   src ="{{url_for('static',filename='man5.jpeg')}}"
+                   style="max-width: 100%; max-height: 100%;"
+              />
+              </div>
               <img
                 id="image"
                 src="{{url_for('static', filename='everyone.png')}}"
-                style="max-width: 100%; max-height: 100%"
+                style="max-width: 50%; max-height: 50%"
               />
             </div>
             <br />
-            <div class="row">
+            <div class="row" style="margin-left: 50%;">
               <a href="" id="down" download style="display: none">
                 <button class="ui primary button">
                   <i class="download icon"></i>
@@ -266,11 +272,33 @@
         </div>
 
         <script>
+          var source = document.getElementById("source");
+          var space = document.getElementById("space");
+          var reader = new FileReader();
+          reader.onload = (function () {
+            this.image = document.createElement("img");
+            var vm = this;
+
+            return function (e) {
+              vm.image.src = e.target.result;
+            };
+          })();
+
+          source.addEventListener("change", function (e) {
+            document.getElementById('example_original').style.display="none";
+            document.getElementById('image').style.display="none";
+            var get_file = e.target.files;
+            if (get_file) {
+              reader.readAsDataURL(get_file[0]);
+            }
+            space.appendChild(image);
+          });
+
+
           document.getElementById("submit").onclick = () => {
             document.getElementById("submit").disabled = true;
             document.getElementById("errorbox").innerHTML = "";
 
-            document.getElementById("image").style.display = "none";
             document.getElementById("down").style.display = "none";
 
             const formData = new FormData();
@@ -295,7 +323,6 @@
 
             formData.append("source", source);
             formData.append("file_type", file_type);
-            console.log("보낸다");
             fetch("/predict", {
               method: "POST",
               body: formData,
@@ -327,6 +354,7 @@
               .catch((e) => {
                 document.getElementById("errorbox").innerHTML = e;
                 document.getElementById("submit").disabled = false;
+                document.getElementById('image').style.display="";
               });
           };
         </script>
