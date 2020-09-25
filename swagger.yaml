@@ -1,7 +1,7 @@
 openapi: 3.0.1
 
 info:
-  title: ainize-catoonize-swagger
+  title: U-squared-net-swagger
   description: "Going Deeper with Nested U-Structure for Salient Object Detection"
   contact:
     name: Ainizer - Sangha Lee
