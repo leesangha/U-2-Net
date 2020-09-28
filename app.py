@@ -140,7 +140,6 @@ def predict():
 
         return jsonify({"message": "Error! Please upload another file"}), 400
 
-    return render_template("hi.html")
 
 
 @app.route("/health")
