@@ -110,20 +110,24 @@
           style="margin-left: auto; margin-right: auto; margin-bottom: 40px"
         >
           <p id="errorbox"></p>
+
+          
           <div id="result">
             <!-- Nested grid -->
             <div class="row" style="display:flex">
-              <div id="space"  style="width: 50%; height:50%;">
+              <div id="space"  style="width: 50%;height:400px;max-height: 400px;">
               <img id="example_original" 
                    src ="{{url_for('static',filename='man5.jpeg')}}"
-                   style="width: 400px; height: 400px;max-width: fit-content; max-height: fit-content;"
+                   style="width: 100%; height: 100%;max-width: 400px; max-height: 400px;"
               />
               </div>
+              <div style="width: 50%;height: 400px;max-height: 400px;">
               <img
                 id="image"
                 src="{{url_for('static', filename='everyone.png')}}"
-                style="max-width: 50%; max-height: 50%"
+                style="width: 100%; height: 100%"
               />
+              </div>
             </div>
             <br />
             <div class="row" style="margin-left: 50%;">
@@ -295,7 +299,10 @@
             if (get_file) {
               reader.readAsDataURL(get_file[0]);
             }
+            image.style.maxHeight="400px";
+            image.style.height="100%";
             image.style.width="100%";
+            console.log(image);
             space.appendChild(image);
           });
 
