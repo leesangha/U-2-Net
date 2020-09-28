@@ -62,11 +62,14 @@
         <div id="usage" style="margin-top: 5px; margin-bottom: 5px">
           <p>1. Name the image file in English or Numbers.</p>
           <p>
-            2. Upload the image file you want to convert.(Under 10Mb image file)
+            2. Upload the image file you want to convert.(Maximum fild size : 10MB)
           </p>
           <p>3. Press the Run button and wait for the result.</p>
-          <p>*Multiple focused picture would get abstract border area</p>
-          <p>-example</p>
+        </div>
+        <h2>Notes</h2>
+        <div>
+          <p>*It might not work with so many objects in the image.</p>
+          <p>-Example</p>
           <img
             id="eg_image"
             src="{{url_for('static', filename='people.jpeg')}}"
@@ -113,7 +116,7 @@
               <div id="space"  style="width: 50%; height:50%;">
               <img id="example_original" 
                    src ="{{url_for('static',filename='man5.jpeg')}}"
-                   style="max-width: 100%; max-height: 100%;"
+                   style="width: 300px; height: 300px;max-width: fit-content; max-height: fit-content;"
               />
               </div>
               <img
@@ -287,10 +290,13 @@
           source.addEventListener("change", function (e) {
             document.getElementById('example_original').style.display="none";
             document.getElementById('image').style.display="none";
+            document.getElementById('down').style.display="none";
             var get_file = e.target.files;
             if (get_file) {
               reader.readAsDataURL(get_file[0]);
             }
+            console.log(image);
+            image.style.width="100%";
             space.appendChild(image);
           });
 
