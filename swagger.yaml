@@ -21,7 +21,7 @@ paths:
         description: "Convert images into black background and main white area"
         content:
           multipart/form-data:
-            schema:
+             schema:
               type: object
               properties:
                 file_type:
